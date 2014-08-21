@@ -9,7 +9,7 @@
 
   <tbody>
     <% @breweries.each do |brewery| %>
-      <p><%=brewery%></p>
+      <p><%=brewery.name%> | <%=brewery.brewery_api_id%></p>
     <% end %>
   </tbody>
 </table>
