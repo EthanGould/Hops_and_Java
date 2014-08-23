@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :beers
-
+  get '/home', to: 'homes#index'
   resources :breweries
 
   # The priority is based upon order of creation: first created -> highest priority.
