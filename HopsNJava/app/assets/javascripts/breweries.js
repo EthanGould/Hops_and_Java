@@ -1,3 +1,3 @@
 $(document).ready(function(){
-  $(".click-me").click(function(){alert("clicked it!");})
+  $(".click-me1").click(function(){alert("clicked it!");})
 });
