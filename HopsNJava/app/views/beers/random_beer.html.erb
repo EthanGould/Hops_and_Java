@@ -1,12 +1,11 @@
-<h1>Beer Index</h1>
+<h1>Random Beer Page</h1>
 
 <button class='click-me'>Click me!</button><br><br>
 <img class='random-beer__image' height='200' width='200' src='http://img1.wikia.nocookie.net/__cb20140409232122/simpsons/images/0/03/Duff_logo.gif'/>
 <div><u>Name:</u> <span class='random-beer__name'></span></div><br>
-<div><u>Brewery:</u> <span><%=link_to '', breweries_path, class: 'random-beer__brewery'%></span></div><br>
+<div><u>Brewery:</u> <span><a href='' class='random-beer__brewery'></a></span></div><br>
 <div><u>Style:</u> <span class='random-beer__type'></span></div><br>
 <div><u>Description:</u> <span class='random-beer__description'></span></div>
 <br>
 <br>
 <h2><%= link_to 'HOME', home_path %></h2>
-
