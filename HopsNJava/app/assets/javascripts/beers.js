@@ -2,77 +2,64 @@ var App = App || {};
 
 App.getRandomBeer = function() {
 
-  $.get('http://api.brewerydb.com/v2/beer/random/?key=819b17a216351db6794aaf097f40c86a', function(response) {
-    /*optional stuff to do after success */
-    // console.log(response)
-    var name,
-        description,
-        type,
-        image,
-        beerId
+  $.get('http://localhost:3000/random_beer.json', function(beer) {
 
-    name = response.data.name;
-    description = response.data.style.description;
-    beerId = response.data.id
-
+    console.log(beer);
+    var name = beer.name;
+    var style = beer.style;
+    var season = beer.season;
+    var brewery = beer.brewery;
+    var brewery_id = beer.brewery_id;
+    if(beer.description){
+      var description = beer.description;
+    } else {
+      var description = 'No description available'
+    };
+    if(beer.organic === true){
+      var organic = 'This beer is organic';
+    } else {
+      var organic = 'This beer is not organic';
+    };
+    // Put beer details on random_beer view
     $('.random-beer__name').html(name);
     $('.random-beer__description').html(description);
+    $('.random-beer__style').html(style);
+    $('.random-beer__brewery').html(brewery);
+    $('.random-beer__organic').html(organic);
+    $('.random-beer__season').html(season);
 
-    // beer style/type
-    if( response.data.style.name ){
-      type = response.data.style.name;
-      $('.random-beer__type').html(type);
-    } else {
-      $('.random-beer__type').html('Unavailable');
-    };
-
-    // beer image
-    if (response.data.labels) {
-      if( response.data.labels.medium ){
-        image = response.data.labels.medium;
-        $('.random-beer__image').attr('src', image);
-      } else if (response.data.labels.icon){
-        image = response.data.labels.icon;
-        $('.random-beer__image').attr('src', image);
-      } else if (response.data.labels.large){
-        image = response.data.labels.large
-        $('.random-beer__image').attr('src', image);
-      } else {
-        image = 'http://img1.wikia.nocookie.net/__cb20140409232122/simpsons/images/0/03/Duff_logo.gif'
-        $('.random-beer__image').attr('src', image);
-      };
-    };
-    $.get('http://api.brewerydb.com/v2/beer/'+beerId+'/breweries?key=819b17a216351db6794aaf097f40c86a', function(response) {
-      console.log(response);
-      var breweryName = response.data[0].name;
-      var breweryId = response.data[0].id;
-      var $breweryTitle = $('.random-beer__brewery');
-      $breweryTitle.html(breweryName);
-      $breweryTitle.attr('href', "/breweries/" + breweryId);
-      localStorage.breweryName = breweryName;
-      localStorage.breweryId = breweryId;
-    });
+    $('.random-beer__brewery').attr('href', '/brewery/' + brewery_id)
   });
-}
+  $.get()
+};
 
-App.buildBeerPage = function(data){
-
-  var beerName,
-      beerDescription,
-      beerType,
-      beerImage,
+App.buildBeerPage = function(){
+  var name,
+      brewery,
+      description,
+      style,
+      image,
       beerId
 
-  beerId = data
-  $.get('http://api.brewerydb.com/v2/beers/'+ beerId +'/?key=819b17a216351db6794aaf097f40c86a', function(response){
+  id = localStorage.beerId;
+  $.get('http://api.brewerydb.com/v2/beer/'+id+'?key=819b17a216351db6794aaf097f40c86a', function(response){
     console.log(response);
+
+    name = response.data.name;
+    brewery = localStorage.breweryName;
+    style = response.data.style.name;
+    description = response.data.description;
+
+    $('.beer__name').html(name);
+    $('.beer__style').html(style);
+    $('.beer__brewery').html(brewery);
+    $('.beer__description').html(description)
   });
-}
+};
 
 $(document).ready(function(){
   $(".click-me").click(App.getRandomBeer);
-  if (top.location.pathname === '/beers/' + localStorage.beerId){
-    App.getAllBreweryBeers();
-  };
+  // var urlParams = window.location.href.split('/');
+  // localStorage.beerId = urlParams[urlParams.length -1];
+  // App.buildBeerPage();
 });
-
