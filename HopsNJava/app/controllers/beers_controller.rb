@@ -1,43 +1,45 @@
 class BeersController < ApplicationController
-  # before_action :set_beer, only: [:show, :edit, :update, :destroy]
+  # before_action :set_beer, only: [:show, :edit, :update, :random_beer]
 
   # GET /beers
   # GET /beers.json
   def index
+    @beers = Beer.all
   end
 
   def random_beer
+    @beer = Beer.get_random_beer
   end
 
-  # # GET /beers/1
-  # # GET /beers/1.json
-  # def show
-  # end
+  # GET /beers/1
+  # GET /beers/1.json
+  def show
+  end
 
-  # # GET /beers/new
-  # def new
-  #   @beer = Beer.new
-  # end
+  # GET /beers/new
+  def new
+    @beer = Beer.new
+  end
 
-  # # GET /beers/1/edit
-  # def edit
-  # end
+  # GET /beers/1/edit
+  def edit
+  end
 
-  # # POST /beers
-  # # POST /beers.json
-  # def create
-  #   @beer = Beer.new(beer_params)
+  # POST /beers
+  # POST /beers.json
+  def create
+    @beer = Beer.new(beer_params)
 
-  #   respond_to do |format|
-  #     if @beer.save
-  #       format.html { redirect_to @beer, notice: 'Beer was successfully created.' }
-  #       format.json { render :show, status: :created, location: @beer }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @beer.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      if @beer.save
+        format.html { redirect_to @beer, notice: 'Beer was successfully created.' }
+        format.json { render :show, status: :created, location: @beer }
+      else
+        format.html { render :new }
+        format.json { render json: @beer.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # # PATCH/PUT /beers/1
   # # PATCH/PUT /beers/1.json
@@ -69,8 +71,8 @@ class BeersController < ApplicationController
   #     @beer = Beer.find(params[:id])
   #   end
 
-    # # Never trust parameters from the scary internet, only allow the white list through.
-    # def beer_params
-    #   params[:beer]
-    # end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def beer_params
+      params[:beer]
+    end
 end
