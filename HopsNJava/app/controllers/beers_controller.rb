@@ -1,5 +1,5 @@
 class BeersController < ApplicationController
-  # before_action :set_beer, only: [:show, :edit, :update, :random_beer]
+  before_action :set_beer, only: [:show]
 
   # GET /beers
   # GET /beers.json
@@ -8,25 +8,16 @@ class BeersController < ApplicationController
   end
 
   def random_beer
-    @beer = Beer.get_random_beer
+    @beer = Beer.all.sample
   end
 
-  # GET /beers/1
-  # GET /beers/1.json
   def show
   end
 
-  # GET /beers/new
   def new
     @beer = Beer.new
   end
 
-  # GET /beers/1/edit
-  def edit
-  end
-
-  # POST /beers
-  # POST /beers.json
   def create
     @beer = Beer.new(beer_params)
 
@@ -65,11 +56,11 @@ class BeersController < ApplicationController
   #   end
   # end
 
-  # private
-  #   # Use callbacks to share common setup or constraints between actions.
-  #   def set_beer
-  #     @beer = Beer.find(params[:id])
-  #   end
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_beer
+      @beer = Beer.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def beer_params
