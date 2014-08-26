@@ -1,6 +1,9 @@
 <h1>All beers</h1>
-<%= @beers.each do |beer| %>
-  <h4><%= beer.name %></h4><br>
+<div><h3> Select a beer below or <%= link_to 'Find a random beer', random_beer_path %></h3>
+<% @beers.each do |beer| %>
+  <ul>
+    <li><%= link_to beer.name, beer_path(beer.id) %></li>
+  </ul>
 <% end %>
 <h2><%= link_to 'HOME', home_path %></h2>
 
