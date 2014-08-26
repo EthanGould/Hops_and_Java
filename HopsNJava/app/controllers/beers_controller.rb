@@ -1,8 +1,5 @@
 class BeersController < ApplicationController
-  before_action :set_beer, only: [:show]
 
-  # GET /beers
-  # GET /beers.json
   def index
     @beers = Beer.all
   end
@@ -12,6 +9,7 @@ class BeersController < ApplicationController
   end
 
   def show
+    @beer = Beer.find(params[:id])
   end
 
   def new
@@ -57,11 +55,6 @@ class BeersController < ApplicationController
   # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_beer
-      @beer = Beer.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def beer_params
       params[:beer]
