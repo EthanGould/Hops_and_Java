@@ -1,5 +1,5 @@
 class BreweriesController < ApplicationController
-  # before_action :set_brewery, only: [:show, :edit, :update, :destroy]
+  before_action :set_brewery, only: [:show]
 
   # GET /breweries
   # GET /breweries.json
@@ -7,35 +7,27 @@ class BreweriesController < ApplicationController
     @breweries = Brewery.all
   end
 
-  # # GET /breweries/1
-  # # GET /breweries/1.json
-  # def show
-  # end
+  def show
+    @beer = Beer.find(params[:id])
+  end
 
-  # # GET /breweries/new
-  # def new
-  #   @brewery = Brewery.new
-  # end
+  def new
+    @brewery = Brewery.new
+  end
 
-  # # GET /breweries/1/edit
-  # def edit
-  # end
+  def create
+    @brewery = Brewery.new(brewery_params)
 
-  # # POST /breweries
-  # # POST /breweries.json
-  # def create
-  #   @brewery = Brewery.new(brewery_params)
-
-  #   respond_to do |format|
-  #     if @brewery.save
-  #       format.html { redirect_to @brewery, notice: 'Brewery was successfully created.' }
-  #       format.json { render :show, status: :created, location: @brewery }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @brewery.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      if @brewery.save
+        format.html { redirect_to @brewery, notice: 'Brewery was successfully created.' }
+        format.json { render :show, status: :created, location: @brewery }
+      else
+        format.html { render :new }
+        format.json { render json: @brewery.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # # PATCH/PUT /breweries/1
   # # PATCH/PUT /breweries/1.json
@@ -61,14 +53,9 @@ class BreweriesController < ApplicationController
   #   end
   # end
 
-  # private
-  #   # Use callbacks to share common setup or constraints between actions.
-  #   def set_brewery
-  #     @brewery = Brewery.find(params[:id])
-  #   end
-
-  #   # Never trust parameters from the scary internet, only allow the white list through.
-  #   def brewery_params
-  #     params[:brewery]
-  #   end
+  private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def brewery_params
+      params[:brewery]
+    end
 end
