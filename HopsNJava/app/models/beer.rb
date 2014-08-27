@@ -19,7 +19,7 @@ class Beer < ActiveRecord::Base
           organic: beer['isOrganic'],
           pic: beer.try(:[], 'labels').try(:[], 'large').try(:[], 'medium').try(:[], 'icon'),
           brewery: brewery['name'],
-          ext_brewery_id: brewery['id']) rescue binding.pry
+          ext_brewery_id: brewery['id'])
       end
     end
   end
