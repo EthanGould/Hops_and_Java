@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
-<img class='beer__image' height='200' width='200' src='http://img1.wikia.nocookie.net/__cb20140409232122/simpsons/images/0/03/Duff_logo.gif'/>
+<img class='beer__image' src=<%= @beer.pic %>/>
 <div><u>Name:</u> <%= @beer.name %></div><br>
 <div><u>Brewery:</u> <%= @beer.brewery %></div><br>
 <div><u>Style:</u> <%= @beer.style %></div><br>
 <div><u>Description:</u> <%= @beer.description %></div><br>
 <br>
-<%= link_to 'Back', beers_path %>
+<h2><%= link_to 'Back', beers_path %></h2>
