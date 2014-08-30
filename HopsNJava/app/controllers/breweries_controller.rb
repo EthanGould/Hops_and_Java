@@ -1,5 +1,4 @@
 class BreweriesController < ApplicationController
-  before_action :set_brewery, only: [:show]
 
   # GET /breweries
   # GET /breweries.json
@@ -8,7 +7,7 @@ class BreweriesController < ApplicationController
   end
 
   def show
-    @beer = Beer.find(params[:id])
+    @brewery = Brewery.find(params[:id])
   end
 
   def new
