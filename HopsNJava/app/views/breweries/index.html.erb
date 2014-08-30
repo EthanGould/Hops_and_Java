@@ -1,3 +1,8 @@
 <h1> All Breweries </h1>
 <br>
+<ul>
+<% @breweries.each do |brewery| %>
+  <li><%= link_to brewery.name, brewery_path(brewery.id) %></li>
+<% end %>
+</ul>
 <h3><%= link_to 'HOME', home_path %></h3>

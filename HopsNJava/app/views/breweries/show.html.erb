@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
-<h1 class='brewery__name'></h1>
+<h1><%= @brewery.name %></h1>
 <br>
-<h4><%= link_to 'HOME', home_path %></h4>
-<h2>All <span class='brewery__name'></span> beers</h2>
-<div class='beer__list'></div>
+<p><u>Established:</u> <%= @brewery.established %></p>
+<p><u>Description:</u> <%= @brewery.description %></p>
+<p>Veiw their website <span><a href=<%= @brewery.website%> >here</a>
+<h2>All <%= @brewery.name %> beers</h2>
 <br>
 <h4><%= link_to 'HOME', home_path %> | <%= link_to 'BACK', breweries_path %></h4>
