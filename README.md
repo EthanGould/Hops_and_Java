@@ -9,6 +9,6 @@ On the site you will also find links to equipment for brewig and roasting your v
 ## Developers
 Contact the developer for more info
 
-[Chris S](https://github.com/CodeMeNow)
-[Ryan P](https://github.com/ryanpah)
+[Chris S](https://github.com/CodeMeNow), 
+[Ryan P](https://github.com/ryanpah), 
 [Ethan G](https://www.github.com/EthanGould)
