@@ -4,7 +4,7 @@
 Hops N Java is the goto place for all things Coffee and Beer.
 
 It offers info from Roasters and Breweries to specifics on beans and beers.
-On the site you will also find links to equipment for brewig and roasting your very own delicious beverages.
+On the site you will also find links to equipment for brewing and roasting your very own delicious beverages. More changes to come. ENJOY!
 
 ## Developers
 Contact the developer for more info
