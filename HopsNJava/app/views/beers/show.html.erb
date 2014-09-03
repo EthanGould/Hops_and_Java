@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
+
 <img class='beer__image' src=<%= @beer.pic %>/>
 <div><u>Name:</u> <%= @beer.name %></div><br>
 <div><u>Brewery:</u> <%= @beer.brewery %></div><br>
 <div><u>Style:</u> <%= @beer.style %></div><br>
 <div><u>Description:</u> <%= @beer.description %></div><br>
 <br>
-<h2><%= link_to 'Back', beers_path %></h2>
+<button type="button" class="btn btn-primary"><%= link_to 'Back', beers_path %></button>
+
+
+<!-- <div class="row">
+	<div class="col-lg-8"><h1>18 way ipa</h1></div>
+	<div class="col-lg-4"><h1>Bambamb Brewery</h1></div>
+</div> -->

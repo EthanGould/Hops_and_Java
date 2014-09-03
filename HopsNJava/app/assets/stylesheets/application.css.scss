@@ -1,3 +1,12 @@
+//@import "_base/_reset";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "_base/_variables";
+@import "_base/_text";
+@import "_components/_buttons";
+@import "header";
+@import "_base/_global";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,6 +19,8 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
  *= require_tree .
  *= require_self
+
  */

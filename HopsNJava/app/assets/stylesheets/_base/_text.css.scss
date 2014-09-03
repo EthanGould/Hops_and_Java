@@ -1,0 +1,19 @@
+.hnj__text--logo  {
+		padding: 18px 0;
+		font-size: 40px;
+		margin: 0;
+}
+.hnj__list {
+	list-style: none;
+	li {
+		padding: 10px;
+		background-color: $vanilla;
+	}
+	li:nth-child(2n){
+		background-color: $green-tea;
+	}
+	li a {
+		color: $strong-coffee;
+	}
+}
+

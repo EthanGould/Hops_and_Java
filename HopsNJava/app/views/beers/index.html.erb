@@ -1,9 +1,10 @@
+
 <h1>All beers</h1>
 <div><h3> Select a beer below or <%= link_to 'Find a random beer', random_beer_path %></h3>
-<% @beers.each do |beer| %>
-  <ul>
+	<ul class="hnj__list">
+	<% @beers.each do |beer| %>
     <li><%= link_to beer.name, beer_path(beer.id) %></li>
-  </ul>
-<% end %>
+	<% end %>
+	</ul>
 <h2><%= link_to 'HOME', home_path %></h2>
 

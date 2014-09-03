@@ -14,6 +14,13 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+#VENDOR prefixes made easy
+gem 'autoprefixer-rails'
+#Bootstrap for easy stying . Sass so it will not suck
+gem 'bootstrap-sass', '~> 3.2.0'
+
+
+
 gem 'pry-rails'
 
 gem 'httparty'
