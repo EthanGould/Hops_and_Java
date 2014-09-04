@@ -1,28 +1,14 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Hops N Java!
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Description
+Hops N Java is the goto place for all things Coffee and Beer.
+
+It offers info from Roasters and Breweries to specifics on beans and beers.
+On the site you will also find links to equipment for brewig and roasting your very own delicious beverages.
+
+## Contact
+Contact the developer for more info
+[Chris S](https://github.com/CodeMeNow)
+[Ryan P](https://github.com/ryanpah)
+[Ethan G](https://www.github.com/EthanGould)
