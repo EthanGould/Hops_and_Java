@@ -26,6 +26,9 @@ Rails.application.configure do
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
+  # included to avoid angular-rails naming confusion (https://shellycloud.com/blog/2013/10/how-to-integrate-angularjs-with-rails-4)
+  config.assets.js_compressor = Uglifier.new(mangle: false)
+
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
