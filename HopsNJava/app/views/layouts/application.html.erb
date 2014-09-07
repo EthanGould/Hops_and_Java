@@ -1,62 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='hnjApp'>
 <head>
   <title>HopsNJava</title>
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="../../assets/javascripts/angular.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-<div class="container-fluid hnj">
-
-	<div class="header--main">
-		<h1 class="hnj__text--logo">Hops N Java</h1>
-	</div>
-	<nav class="row nav--main">
-		<div class="col-lg-3">
-			<div class="btn-group">
-				<button type="button" class="btn btn-default vanilla dropdown-toggle" data-toggle="dropdown">
-					Sort By <span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu" role="menu">
-					<li><a href="#">Beers</a></li>
-					<li><a href="#">Breweries</a></li>
-					<li><a href="#">Products</a></li>
-					<li><a href="#">Equipment</a></li>
-				</ul>
-			</div>
-			<div class="btn-group">
-			<button type="button" class="btn btn-default vanilla dropdown-toggle" data-toggle="dropdown">
-			Filters <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu">
-			<li><a href="#">Season</a></li>
-			<li><a href="#">Brewery</a></li>
-			<li><a href="#">Style</a></li>
-			<li><a href="#">Organic</a></li>
-			</ul>
-			</div>
-		</div>
-		<div class="col-lg-4">
-			<h4>Beer</h4>
-		</div>
-		<div class="col-lg-5">
-			<div class="input-group">
-				<input type="text" class="form-control">
-				<span class="input-group-btn">
-					<button class="btn btn-default" type="button">Go!</button>
-				</span>
-			</div><!-- /input-group -->
-		</div>
-	</nav>
-
-
-
-	
-
 
 <%= yield %>
-</div>
+
 </body>
 </html>
