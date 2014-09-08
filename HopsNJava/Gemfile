@@ -19,7 +19,7 @@ gem 'autoprefixer-rails'
 #Bootstrap for easy stying . Sass so it will not suck
 gem 'bootstrap-sass', '~> 3.2.0'
 
-
+gem 'angularjs-rails', '~> 1.2.22'
 
 gem 'pry-rails'
 
