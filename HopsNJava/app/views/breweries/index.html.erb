@@ -1,9 +1,12 @@
-<div class="row">
-
+<%= render "shared/header" %>
 <h1> All Breweries </h1>
 <br>
 <div class='container'>
-
+  <ul>
+    <% @breweries.each do |brewery|%>
+    <li><%= link_to brewery.name, brewery_path(brewery.id) %></li>
+    <% end %>
+  </ul>
 </div>
 <h3><%= link_to 'HOME', home_path %></h3>
 </div>
