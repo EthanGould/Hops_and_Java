@@ -10,17 +10,26 @@ $(document).ready(function(){
 // var pageItems = $('.list-of-beers').children();
 
 var filterResuts = function(input) {
+  var originalItems = $('.list-of-beers').children();
+  var matchedElements = []
   input.keyup(function(event) {
-    var pageItems = $('.list-of-beers').children();
-    input = $(this).val();
-    console.log($(this).val());
-    for (var i = 0; i < pageItems.length; i++) { //each beer element
-      var beer = pageItems[i].innerText;
-      if (beer.indexOf(input) >= 0) {
-        console.log(pageItems[i]);
-        pageItems.remove(pageItems[i]);
+    userInput = $(this).val();
+    console.log(userInput);
+    for (var i = 0; i < originalItems.length; i++) { //each beer element
+      var beer = originalItems[i].innerText;
+      if (userInput.length && beer.indexOf(userInput) >= 0) {
+        matchedElements =[];
+        matchedElements.push(originalItems[i]);
+        console.log(matchedElements.length);
+      } else {
+        console.log("mismatch");
       }
     }
-    console.log(pageItems[i]);
   });
 };
+
+var renderResults = function(array) {
+  for (var i = 0; i < array.length; i++) {
+    $('.list-of-beers').append(array[i]);
+  }
+}
